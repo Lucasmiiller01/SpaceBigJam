@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Storage\Scripts\FireManager.cs">
+    <Files>
+      <File FileName="Assets\Storage\Scripts\PlayerManager.cs" Line="42" Column="87" />
+      <File FileName="Assets\Storage\Scripts\EnemyBehaviour.cs" Line="37" Column="243" />
+      <File FileName="Assets\Storage\Scripts\FireManager.cs" Line="25" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

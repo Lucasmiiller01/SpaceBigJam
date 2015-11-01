@@ -75,6 +75,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
 			// Add força no tiro
 			shoot.GetComponent<Rigidbody2D>().AddForceAtPosition(direction_shoot, target.position,ForceMode2D.Force);
+		
 		}
 	}
 }

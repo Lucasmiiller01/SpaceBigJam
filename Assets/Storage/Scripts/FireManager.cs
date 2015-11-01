@@ -5,6 +5,7 @@ public class FireManager : MonoBehaviour
 {
     public float speed;
     private float startTime;
+	public Vector3 target;
 
     void Start()
     {
@@ -19,12 +20,14 @@ public class FireManager : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+		float step = 20 * Time.deltaTime;
+		//this.transform.position = Vector3.Lerp(this.transform.position,target, step);
+		transform.position = Vector3.MoveTowards(this.transform.position , target, step);
     }
     void FixedUpdate()
     {
         Move();
-        if (Time.fixedTime - startTime > 3)
+        if (Time.fixedTime - startTime > 8)
             Destroy(this.gameObject);
     }
 }

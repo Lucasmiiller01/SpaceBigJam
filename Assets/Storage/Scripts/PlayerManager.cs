@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour {
     private float timeClick;
     private float waitShoot;
     private Vector3 destinePos;
+	public Camera camPrincipal;
 
     void Start()
     {
@@ -33,12 +34,20 @@ public class PlayerManager : MonoBehaviour {
     }
     void MouseClick()
     {
-        // Quando pressionar o botão direito do mouse
-        if (Input.GetMouseButtonDown(0))
+
+		// Quando pressionar o botão direito do mouse
+		if (Input.GetMouseButtonDown(0))
         {
-            //intancia o tiro e determina o momento que foi clicado
-            Instantiate(fire, this.transform.position, Quaternion.identity);
-            timeClick = Time.fixedTime;
+
+			//intancia o tiro, determina o momento que foi clicado e vai ate a posiçao do mouse
+			float step = 300 * Time.deltaTime;
+			GameObject shoot;
+			Vector3 posCamMouse = camPrincipal.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z));
+
+			shoot = (GameObject)Instantiate(fire, this.transform.position, Quaternion.identity);
+			shoot.GetComponent<FireManager>().target = posCamMouse;
+
+			timeClick = Time.fixedTime;
             waitShoot = Time.fixedTime;
         }
         // Caso solte o botão direito, reinicia o tempo
@@ -50,7 +59,7 @@ public class PlayerManager : MonoBehaviour {
         if (timeClick != 0 && Time.fixedTime - timeClick > 0.1f)
         {
             Move();
-            ShootFaster();
+           // ShootFaster();
         }
     }
 
